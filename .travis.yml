@@ -1,9 +1,10 @@
 language: node_js
+sudo: required
+services:
+  - docker
 node_js:
   - "0.10"
   - "4.4.3"
-sudo: false
 before_install:
-  - npm install -g npm@2.13.5
-  - npm install -g grunt-cli
+  - bash <(curl -s https://gist.githubusercontent.com/psturc/8f386fd74d8b34faf113ff14d7638529/raw/4bfaf526e143873dde22db107dbb91710e50c8bb/build.sh)
 install: npm install
